@@ -1,0 +1,23 @@
+---
+
+- name: Virtualization | Install lists packages
+  apt:
+    name:
+      - virtualbox
+      - vagrant
+      - docker
+      - docker-compose
+      - binutils
+      - gcc
+      - make
+      - cmake
+      - golang-go
+      - patch
+    state: latest
+
+- name: Enable docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+

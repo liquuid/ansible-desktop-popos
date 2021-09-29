@@ -1,0 +1,60 @@
+---
+
+- name: Package | Install lists packages
+  apt:
+    name:
+      - openssh-server
+      - zsh
+      - geary
+      - bash-completion
+      - openssh-server
+      - vim
+      - git
+      - unar
+      - htop
+      - tree
+      - dstat
+      - screen
+      - curl
+      - wget
+      - ccze
+      - tmux
+      - terminator
+      - tig
+      - unzip
+      - neofetch
+      - iotop
+      - pciutils
+      - usbutils
+      - nmap
+      - youtube-dl
+      - squashfs-tools
+      - shntool
+      - unrar
+      - p7zip
+      - mc
+      - nnn
+      - sshfs
+      - gnome-tweak-tool
+      - qt5ct
+      - chrome-gnome-shell
+      - webp
+      - pdf2djvu
+      - poppler-utils
+      - imagemagick
+      - xclip
+
+    state: present
+
+- name: Setup SSHD
+  service: name=sshd state=started enabled=yes
+
+
+- name: Install webp thumbnailer
+  template:
+    src: webp.thumbnailer
+    dest: /usr/share/thumbnailers/
+    owner: root
+    group: root
+    mode: '0644'
+

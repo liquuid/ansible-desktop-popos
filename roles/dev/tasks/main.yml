@@ -1,0 +1,103 @@
+---
+- name: Install X11 libs
+  apt:
+    name:
+      - libx11-dev
+      - libxcursor-dev 
+      - libxrandr-dev
+      - libxinerama-dev
+      - libxi-dev
+      - libgl1-mesa-dev
+      - g++
+      - libsdl2-gfx-dev
+      - libsdl2-image-dev
+      - libsdl2-mixer-dev
+      - libsdl2-ttf-dev
+      - libsdl2-dev
+      - libxxf86vm-dev
+      - intltool
+      - libglib2.0-dev
+      - libtool
+      - fonts-firacode
+    state: present
+
+- name: Install "Snap"
+  apt: name=snapd state=latest 
+
+- name: Enable "Snap"
+  service: name=snapd state=started enabled=yes
+
+  #- name: Create "snap" symlink
+  #file:
+  #  src:  /var/lib/snapd/snap
+  #  dest: /snap
+  #  owner: root
+  #  state: link
+
+
+- name: Install "phpstorm" with option --classic
+  community.general.snap:
+    name: phpstorm
+    classic: yes
+
+- name: Install "goland" with option --classic
+  community.general.snap:
+    name: goland
+    classic: yes
+
+
+- name: Install "clion" with option --classic
+  community.general.snap:
+    name: clion
+    classic: yes
+
+- name: Install "webstorm" with option --classic
+  community.general.snap:
+    name: webstorm
+    classic: yes
+
+- name: Install "pycharm-professional" with option --classic
+  community.general.snap:
+    name: pycharm-professional
+    classic: yes
+
+- name: Install "vscode" with option --classic
+  community.general.snap:
+    name: code
+    classic: yes
+
+- name: install "insomnia" 
+  community.general.snap:
+    name: insomnia
+    state: present
+
+- name: Install "postbird" 
+  community.general.snap:
+    name: postbird
+
+- name: Install "dbeaver" 
+  community.general.snap:
+    name: dbeaver-ce       
+
+- name: Install "codeblocks"
+  apt:
+    name: codeblocks
+    state: absent
+
+- name: Install "anjuta"
+  apt:
+    name: anjuta
+    state: absent
+
+- name: Install "arduino"
+  apt:
+    name: arduino
+
+- name: Install "micro"
+  apt:
+    name: micro
+
+- name: Install "zeal"
+  apt:
+    name: zeal
+
