@@ -43,7 +43,8 @@
       - poppler-utils
       - imagemagick
       - xclip
-
+      - syncthing
+      - syncthing-gtk
     state: present
 
 - name: Setup SSHD
