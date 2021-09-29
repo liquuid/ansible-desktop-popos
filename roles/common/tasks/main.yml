@@ -43,6 +43,7 @@
       - poppler-utils
       - imagemagick
       - xclip
+      - xsel
       - syncthing
       - syncthing-gtk
     state: present
